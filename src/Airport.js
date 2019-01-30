@@ -1,9 +1,13 @@
 class Airport {
-  constructor(capacity) {
+  constructor(weather = new Weather) {
     this.hangar = [];
+    this.weather = weather;
   }
 
   land(plane) {
+    if (this.weather.isStormy()) {
+      throw 'It is too stormy to land!'
+    }
     this.hangar.push(plane);
     plane.changeLandedStatus();
   }

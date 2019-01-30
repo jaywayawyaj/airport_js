@@ -4,6 +4,10 @@
 
 class Plane {
   constructor() {
-    this.landed = true
-  }
-}
+    this.isLanded = false
+  };
+
+  changeLandedStatus() {
+    this.isLanded = !this.isLanded;
+  };
+};

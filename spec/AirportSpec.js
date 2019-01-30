@@ -6,8 +6,18 @@ describe('Airport', function() {
     plane = new Plane();
   });
 
-  it('lands a plane', function() {
-    airport.land(plane);
-    expect(airport.hangar.length).toEqual(1);
+  describe('#land', function() {
+    it('lands a plane', function() {
+      airport.land(plane);
+      expect(airport.hangar.length).toEqual(1);
+    });
+  });
+
+  describe('#takeoff', function() {
+    it('a plane can takeoff from the hangar', function() {
+      airport.land(plane);
+      airport.takeoff(plane);
+      expect(airport.hangar.length).toEqual(0);
+    });
   });
 });

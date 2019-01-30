@@ -44,13 +44,18 @@ describe('Airport', function() {
       expect(airport.atCapacity()).toEqual(false);
     })
 
-    it('will return true when airport is not full', function() {
+    it('will return true when airport is full', function() {
       airport.land(plane);
       expect(airport.atCapacity()).toEqual(true);
     })
 
-    xit('will not let a plane land when full', function() {
+    describe('capacity reached', function() {
+      it('will not let a plane land when full', function() {
+        spyOn(airport, 'atCapacity').and.returnValue(true);
+        let capacityError = 'Cannot land - airport capacity reached'
+        expect(function(){ airport.land(plane) }).toThrow(capacityError)
 
+      })
     })
   })
 })

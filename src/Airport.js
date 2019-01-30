@@ -9,6 +9,9 @@ class Airport {
     if (this.weather.isStormy()) {
       throw 'It is too stormy to land!'
     }
+    if (this.atCapacity()) {
+      throw 'Cannot land - airport capacity reached'
+    }
     this.hangar.push(plane);
     plane.changeLandedStatus();
   }

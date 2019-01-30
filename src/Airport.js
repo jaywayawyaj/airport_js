@@ -13,6 +13,9 @@ class Airport {
   }
 
   takeoff(plane) {
+    if (this.weather.isStormy()) {
+      throw 'It is too stormy to takeoff!'
+    }
     this.hangar.pop();
     plane.changeLandedStatus();
   }

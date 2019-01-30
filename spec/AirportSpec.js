@@ -44,6 +44,11 @@ describe('Airport', function() {
       expect(airport.atCapacity()).toEqual(false);
     })
 
+    it('will return true when airport is not full', function() {
+      airport.land(plane);
+      expect(airport.atCapacity()).toEqual(true);
+    })
+
     xit('will not let a plane land when full', function() {
 
     })

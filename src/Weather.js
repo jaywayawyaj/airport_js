@@ -1,5 +1,9 @@
 class Weather {
   constructor() {
-    this.isStormy = false;
+    this.chanceOfStorms = 0.2
+  }
+
+  isStormy() {
+    return (Math.random() < this.chanceOfStorms);
   }
 }

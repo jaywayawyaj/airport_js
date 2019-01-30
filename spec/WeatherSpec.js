@@ -5,8 +5,9 @@ describe('Weather', function() {
   })
 
   describe('#isStormy', function () {
-    it('returns false by default', function() {
-      expect(weather.isStormy).toEqual(false);
+    it('returns stormy weather sometimes', function() {
+      spyOn(Math, 'random').and.returnValue(0);
+      expect(weather.isStormy()).toEqual(true);
     })
   })
 })

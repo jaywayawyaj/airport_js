@@ -38,4 +38,14 @@ describe('Airport', function() {
       expect(function(){ airport.takeoff(plane) }).toThrow(stormyTakeoff);
     })
   })
+
+  describe('capacity', function() {
+    it('will return false when airport is not full', function() {
+      expect(airport.atCapacity()).toEqual(false);
+    })
+
+    xit('will not let a plane land when full', function() {
+
+    })
+  })
 })

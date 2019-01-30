@@ -1,7 +1,8 @@
 class Airport {
-  constructor(weather = new Weather) {
+  constructor(weather = new Weather, capacity = 1) {
     this.hangar = [];
     this.weather = weather;
+    this.capacity = capacity;
   }
 
   land(plane) {
@@ -18,5 +19,9 @@ class Airport {
     }
     this.hangar.pop();
     plane.changeLandedStatus();
+  }
+
+  atCapacity() {
+    return (this.hangar.length >= this.capacity)
   }
 }
